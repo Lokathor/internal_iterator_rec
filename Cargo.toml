@@ -1,0 +1,11 @@
+[package]
+name = "internal_iterator_rec"
+description = "Recursive extension for the `internal_iterator` crate"
+repository = "https://github.com/Lokathor/internal_iterator_rec"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "Zlib OR Apache-2.0 OR MIT"
+
+[dependencies]
+internal-iterator = "0.2.3"
