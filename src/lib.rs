@@ -93,14 +93,14 @@ macro_rules! adhoc_internal_iterator_rec {(
     type Item = $ItemTy;
     fn try_for_each_rec<R, F>(self, $yield: &mut F) -> ::core::ops::ControlFlow<R>
     where
-    F: FnMut(<Self as InternalIteratorRec>::Item) -> ::core::ops::ControlFlow<R>,
+    F: FnMut(<Self as $crate::InternalIteratorRec>::Item) -> ::core::ops::ControlFlow<R>,
     {
       let Self($($this)+) = self;
       $body
       ::core::ops::ControlFlow::Continue(())
     }
   }
-  impl ::internal_iterator::InternalIterator for AdhocInternalIteratorRec<'_> {
+  impl $crate::InternalIterator for AdhocInternalIteratorRec<'_> {
       $crate::internal_iterator_rec_guts!();
   }
   AdhocInternalIteratorRec($value)
